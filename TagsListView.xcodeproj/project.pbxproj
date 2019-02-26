@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC1B50422224ECE40066CF98 /* demo_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1B50412224ECE40066CF98 /* demo_1.png */; };
 		DC7580AE2223886C00A01C37 /* TagsListView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC7580A42223886C00A01C37 /* TagsListView.framework */; };
 		DC7580B32223886C00A01C37 /* TagsListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7580B22223886C00A01C37 /* TagsListViewTests.swift */; };
 		DC7580B52223886C00A01C37 /* TagsListView.h in Headers */ = {isa = PBXBuildFile; fileRef = DC7580A72223886C00A01C37 /* TagsListView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -70,6 +71,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DC1B50412224ECE40066CF98 /* demo_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo_1.png; sourceTree = "<group>"; };
 		DC7580A42223886C00A01C37 /* TagsListView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TagsListView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7580A72223886C00A01C37 /* TagsListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagsListView.h; sourceTree = "<group>"; };
 		DC7580A82223886C00A01C37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 		DC7580C722238A4D00A01C37 /* TagsListViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DC1B50412224ECE40066CF98 /* demo_1.png */,
 				DC7580C822238A4D00A01C37 /* AppDelegate.swift */,
 				DC7580CA22238A4D00A01C37 /* ViewController.swift */,
 				DC7580CC22238A4D00A01C37 /* Main.storyboard */,
@@ -389,6 +392,7 @@
 			files = (
 				DC7580D322238A4E00A01C37 /* LaunchScreen.storyboard in Resources */,
 				DC7580D022238A4E00A01C37 /* Assets.xcassets in Resources */,
+				DC1B50422224ECE40066CF98 /* demo_1.png in Resources */,
 				DC7580CE22238A4D00A01C37 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -37,10 +37,7 @@ class TagsListCell: UICollectionViewCell {
        return btn
         
     }()
-    lazy var addButton: UIButton = {
-       let btn = UIButton(type: UIButton.ButtonType.contactAdd)
-       return btn
-    }()
+    
     
     internal func setCell(model: String,config: TagConfig){
         

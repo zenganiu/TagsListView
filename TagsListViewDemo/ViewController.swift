@@ -70,7 +70,5 @@ class ViewController: UIViewController {
         tagsList2.setDataSource([])
     }
     
-    
-    
 }
 
