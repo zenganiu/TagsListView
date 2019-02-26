@@ -9,21 +9,26 @@
 import UIKit
 
 protocol TagsListCellDelegate {
+    
     func didTappedDelButton(cell: TagsListCell)
 }
 
 
 class TagsListCell: UICollectionViewCell {
     
+    
+    var cellConfig: TagConfig = TagConfig()
     var delegate: TagsListCellDelegate?
-    var label: UILabel = {
+    
+    lazy var label: UILabel = {
         
        let lb = UILabel()
        lb.font = UIFont.systemFont(ofSize: 14)
+       lb.textAlignment = .center
        return lb
         
     }()
-    var delButton: UIButton = {
+    lazy var delButton: UIButton = {
         
        let btn = UIButton()
        btn.setTitle("✕", for: .normal)
@@ -32,33 +37,65 @@ class TagsListCell: UICollectionViewCell {
        return btn
         
     }()
+    lazy var addButton: UIButton = {
+       let btn = UIButton(type: UIButton.ButtonType.contactAdd)
+       return btn
+    }()
     
-    
+    internal func setCell(model: String,config: TagConfig){
+        
+        self.cellConfig = config
+        self.subviews.forEach{$0.removeFromSuperview()}
+        
+        switch cellConfig.cellStyle {
+        case .text:
+            self.addSubview(label)
+            label.text = model
+            label.textColor = config.textColor
+            
+        case .closeText:
+            
+            self.addSubview(label)
+            self.addSubview(delButton)
+            
+            label.text = model
+            label.textColor = config.textColor
+            
+            delButton.setTitleColor(config.textColor, for: .normal)
+            delButton.setTitleColor(config.textColor.withAlphaComponent(0.8), for: .highlighted)
+            delButton.addTarget(self, action: #selector(delButtonAction), for: .touchUpInside)
+        }
+        
+        self.backgroundColor = config.cellBackgroudColor
+        self.setNeedsLayout()
+    }
+
     override func layoutSubviews() {
-                
-        delButton.frame = .init(x: frame.width-5-25, y: (frame.height-25)/2, width: 25, height: 25)
-        label.frame = .init(x: 10, y: (frame.height-20)/2, width: frame.width-10-5-35, height: 20)
+        
+        self.layer.cornerRadius = 5
+        self.layer.masksToBounds = true
+        
+        switch cellConfig.cellStyle {
+        case .text:
+            label.frame = .init(x: 10, y: (frame.height-20)/2, width: frame.width-20, height: 20)
+        case .closeText:
+            delButton.frame = .init(x: frame.width-5-25, y: (frame.height-25)/2, width: 25, height: 25)
+            label.frame = .init(x: 10, y: (frame.height-20)/2, width: frame.width-10-5-35, height: 20)
+        }
     }
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
     }
     
-    func setup(){
-        
-        self.addSubview(label)
-        self.addSubview(delButton)
-        delButton.addTarget(self, action: #selector(delButtonAction), for: .touchUpInside)
-        
-    }
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     @objc private func delButtonAction(){
+        
         self.delegate?.didTappedDelButton(cell: self)
     }
-    
 }
