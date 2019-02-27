@@ -3,6 +3,7 @@
 ![效果图](https://github.com/zenganiu/TagsListView/blob/master/TagsListViewDemo/demo_2.gif)
 # 使用
 ...
+
         var config = TagConfig() //配置
         config.cellStyle = .closeText //带删除tag
         
@@ -15,4 +16,5 @@
         
         //添加标签
         tagsList.add(tag: "程序员")
+        
 ...
