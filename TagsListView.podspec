@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TagsListView"
-  s.version      = "0.0.1"
+  s.version      = "0.0.5"
   s.summary      = "标签列表"
 
   # This description is used to generate tags and improve search results.
@@ -24,7 +24,9 @@ Pod::Spec.new do |s|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = "支持添加、删除单个标签"
+  s.description  = <<-DESC
+                    标签列表
+                   DESC
 
   s.homepage     = "https://github.com/zenganiu/TagsListView"
   # s.screenshots  = "https://github.com/zenganiu/TagsListView/blob/master/TagsListViewDemo/demo_2.gif"
@@ -66,7 +68,7 @@ Pod::Spec.new do |s|
   # s.platform     = :ios, "5.0"
 
   #  When using multiple platforms
-  # s.ios.deployment_target = "5.0"
+  s.ios.deployment_target = "12.1"
   # s.osx.deployment_target = "10.7"
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.0"
@@ -89,8 +91,8 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
+  s.source_files  = "TagsListView/*.swift"
+  #s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
 
@@ -128,9 +130,11 @@ Pod::Spec.new do |s|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  # s.requires_arc = true
+   s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
-
+  s.pod_target_xcconfig = {
+      'SWIFT_VERSION' => '4.2'
+  }
 end
