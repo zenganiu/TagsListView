@@ -18,3 +18,6 @@
         tagsList.add(tag: "高富帅")
         
 ...
+#cocoapod
+
+pod 'TagsListView',:git=>'https://github.com/zenganiu/TagsListView.git'
